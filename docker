@@ -1,0 +1,12 @@
+provider "aws" {
+  region = "ap-south-1"
+}
+
+resource "aws_instance" "docker_server" {
+  ami           = "ami-08e3b3155fc937a94" # Amazon Linux 2023 - verify for your region
+  instance_type = "c7i-flex.large"
+
+  tags = {
+    Name = "High-Config-Docker-Server"
+  }
+}
